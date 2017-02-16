@@ -1,6 +1,6 @@
 # CoderRestaurant Website
 
-**The Delicious One** is a Ruby on Rails restaurant website let users order foods.
+**CoderRestaurant** is a Ruby on Rails restaurant website let users order foods.
 
 Submitted by: **Lanh Hoang**
 
@@ -27,11 +27,11 @@ URL: **heroku-app-url**
   * Price (VND)
   * Section - Breakfast, Lunch, Dinner, Drinks
   * Image URL - do a google search or use LoremFlickr: http://loremflickr.com/320/240/canhchua
-* [ ] User should be able to filter by section of Breakfast, Lunch, Dinner, or Drinks and see only the relevant items.
-* [ ] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
-* [ ] User should be able to search for a menu item and see results.
+* [x] User should be able to filter by section of Breakfast, Lunch, Dinner, or Drinks and see only the relevant items.
+* [x] User can sort menu items by “alphabetical”, “price low to high”, and “price high to low”.
+* [x] User should be able to search for a menu item and see results.
 * [ ] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
-* [ ] User can click “order” on a menu item to go to a “Create Order” page.
+* [x] User can click “order” on a menu item to go to a “Create Order” page.
 * [ ] User is able to fill in their name, phone number, and address.
 * [ ] User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost 20,000 VND), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
 
