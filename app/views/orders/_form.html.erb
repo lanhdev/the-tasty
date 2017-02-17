@@ -1,6 +1,6 @@
-<%= form_for [@item, @order] do |f| %>
-  <% if @order.errors.present? %>
-    <div class="alert alert-danger"><%= @order.errors.full_messages.to_sentence %></div>
+<%= form_for [item, order] do |f| %>
+  <% if order.errors.present? %>
+    <div class="alert alert-danger"><%= order.errors.full_messages.to_sentence %></div>
   <% end %>
   <div class="form-group">
     <div class="field">

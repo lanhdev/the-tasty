@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<p id="notice"><%= notice %></p>
+<h1>Thank you for your order</h1>
+<div class="row">
+  <table class="table table-striped">
+    <thead class="table-inverse">
+      <tr>
+        <th>Customer</th>
+        <th>Item</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @order.food_item.name %></td>
+        <td><%= @order.name %></td>
+        <td><%= @order.phone_number %></td>
+        <td><%= @order.address %></td>
+        <td><%= @order.quantity %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

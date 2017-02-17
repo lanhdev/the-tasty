@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def index
-    @orders = Order.all
+    @item = FoodItem.find(params[:food_item_id])
+    @orders = @item.orders.all
   end
 
   def show
@@ -22,6 +23,15 @@ class OrdersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @order.destroy
+  end
+
+  def set_order
+    @item = FoodItem.find(params[:food_item_id])
+    @order = @item.orders.find(params[:id])
   end
 
   def order_params
