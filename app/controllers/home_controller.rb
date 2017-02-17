@@ -15,7 +15,7 @@ class HomeController < ApplicationController
       @items = FoodItem.search(params[:search])
     end
 
-    if params[:section]
+    if params[:section_id]
       case params[:sort]
       when "name"
         @items = @items.order(:name)
