@@ -1,29 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @food_item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @food_item.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @food_item.price %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @food_item.section %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @food_item.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
-<%= link_to 'Back', food_items_path %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src=<%= @food_item.image_url %> alt=<%= @food_item.name %> >
+      <div class="card-block">
+        <%= link_to 'Edit', edit_food_item_path(@food_item), class: 'btn btn-warning' %>
+        <%= link_to 'Back', menu_path, class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><%= @food_item.name %></h4>
+        <p><%= @food_item.description %></p>
+        <p><%= number_to_currency(@food_item.price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

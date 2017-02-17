@@ -15,15 +15,17 @@ class HomeController < ApplicationController
       @items = FoodItem.search(params[:search])
     end
 
-    case params[:sort]
-    when "name"
-      @items = @items.order(:name)
-    when "desc"
-      @items = @items.order(:price => :desc)
-    when "asc"
-      @items = @items.order(:price => :asc)
-    else
-      @items = @items.order(:id)
+    if params[:section]
+      case params[:sort]
+      when "name"
+        @items = @items.order(:name)
+      when "desc"
+        @items = @items.order(:price => :desc)
+      when "asc"
+        @items = @items.order(:price => :asc)
+      else
+        @items = @items.order(:id)
+      end
     end
   end
 
