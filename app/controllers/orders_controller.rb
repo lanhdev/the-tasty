@@ -1,4 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @orders = Order.all
+  end
+
+  def show
+  end
+
   def new
     @item = FoodItem.find(params[:food_item_id])
     @order = Order.new(food_item: @item) #@item.orders.build

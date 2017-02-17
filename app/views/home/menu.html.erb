@@ -17,7 +17,8 @@
     <%= form_tag nil, method: 'get' do %>
       <%= hidden_field_tag :section_id, params[:section_id] %>
       <div class="form-inline">
-        <%= select_tag :sort, options_for_select([['Name','name'], ['Highest price','desc'], ['Lowest price','asc']]), class: 'form-control' %>
+        <%= select_tag :sort_column, options_for_select([['Name','name'], ['Price','price']]), class: 'form-control' %>
+        <%= select_tag :sort_type, options_for_select([['Ascending','asc'], ['Descending','desc']]), class: 'form-control' %>
         <%= submit_tag 'Sort', class: 'btn btn-success' %>
       </div>
     <% end %>
