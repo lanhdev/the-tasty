@@ -21,6 +21,7 @@
         <h4 class="card-title"><%= @food_item.name %></h4>
         <p><%= @food_item.description %></p>
         <p><%= number_to_currency(@food_item.price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></p>
+        <p><%= number_to_human(@food_item.hit_count) %></p>
       </div>
     </div>
   </div>

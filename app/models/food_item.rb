@@ -2,6 +2,7 @@ class FoodItem < ApplicationRecord
   belongs_to :section
   validates :name, :price, presence: true
   has_many :orders
+  is_impressionable
 
   def self.search(search)
     where("name ILIKE ?", "#{search}")

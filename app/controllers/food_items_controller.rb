@@ -1,5 +1,6 @@
 class FoodItemsController < ApplicationController
   before_action :set_food_item, only: [:show, :edit, :update, :destroy]
+  impressionist :actions=>[:show]
 
   # GET /food_items
   # GET /food_items.json
@@ -10,6 +11,8 @@ class FoodItemsController < ApplicationController
   # GET /food_items/1
   # GET /food_items/1.json
   def show
+    @food_item.hit_count = @food_item.impressionist_count
+    @food_item.save
   end
 
   # GET /food_items/new
