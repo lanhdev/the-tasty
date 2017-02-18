@@ -17,9 +17,10 @@ class OrdersController < ApplicationController
   def create
     @item = FoodItem.find(params[:food_item_id])
     @order = @item.orders.build order_params
+    @order.total_price_calc
 
     if @order.save
-      redirect_to menu_path, flash: {success: "Thank you for your order. "}
+      redirect_to food_item_order_path(id: @order.id), flash: {success: "Thank you for your order. "}
     else
       render 'new'
     end

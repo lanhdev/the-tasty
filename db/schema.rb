@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218085556) do
+ActiveRecord::Schema.define(version: 20170218173746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,18 @@ ActiveRecord::Schema.define(version: 20170218085556) do
     t.string   "phone_number"
     t.text     "address"
     t.string   "coupon_code"
+    t.decimal  "total_price"
     t.index ["food_item_id"], name: "index_orders_on_food_item_id", using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "reviewer"
+    t.text     "comment"
+    t.integer  "rating"
+    t.integer  "food_item_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["food_item_id"], name: "index_reviews_on_food_item_id", using: :btree
   end
 
   create_table "sections", force: :cascade do |t|
@@ -74,4 +85,5 @@ ActiveRecord::Schema.define(version: 20170218085556) do
 
   add_foreign_key "food_items", "sections"
   add_foreign_key "orders", "food_items"
+  add_foreign_key "reviews", "food_items"
 end

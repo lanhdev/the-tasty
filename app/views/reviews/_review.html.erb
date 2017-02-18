@@ -1,0 +1,12 @@
+<div class="card-block">
+  <h4 class="card-title"><strong><%= review.reviewer %></strong></h4>
+  <div class="card-text"><%= review.comment %></div>
+  <div class="star-rating" data-score= <%= review.rating %> ></div>
+</div>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets',
+    scoreName: 'review[rating]'
+  });
+</script>

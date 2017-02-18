@@ -13,6 +13,9 @@ class FoodItemsController < ApplicationController
   def show
     @food_item.hit_count = @food_item.impressionist_count
     @food_item.save
+
+    @reviews = @food_item.reviews.to_a
+    @avg_rating = @reviews.blank? ? 0 : @food_item.reviews.average(:rating).floor
   end
 
   # GET /food_items/new
