@@ -13,11 +13,11 @@
     <tbody>
       <tr>
         <td>Customer</td>
-        <td><%= @order.food_item.name %></td>
+        <td><%= @order.name %></td>
       </tr>
       <tr>
         <td>Item</td>
-        <td><%= @order.name %></td>
+        <td><%= @order.food_item.name %></td>
       </tr>
       <tr>
         <td>Address</td>
@@ -41,7 +41,7 @@
       </tr>
       <tr>
         <td>Total cost</td>
-        <td><%= number_to_currency( (@order.food_item.price * @order.quantity) + 20000, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+        <td><%= number_to_currency(@order.coupon_code == "CODERSCHOOL" ? (@order.food_item.price * @order.quantity) / 2 + 20000 : (@order.food_item.price * @order.quantity) + 20000, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
       </tr>
     </tbody>
   </table>
