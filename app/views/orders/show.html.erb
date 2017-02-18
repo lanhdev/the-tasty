@@ -9,21 +9,39 @@
 <div class="row">
   <table class="table table-striped">
     <thead class="table-inverse">
-      <tr>
-        <th>Customer</th>
-        <th>Item</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Quantity</th>
-      </tr>
     </thead>
     <tbody>
       <tr>
+        <td>Customer</td>
         <td><%= @order.food_item.name %></td>
+      </tr>
+      <tr>
+        <td>Item</td>
         <td><%= @order.name %></td>
+      </tr>
+      <tr>
+        <td>Address</td>
         <td><%= @order.phone_number %></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
         <td><%= @order.address %></td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
         <td><%= @order.quantity %></td>
+      </tr>
+      <tr>
+        <td>Created at</td>
+        <td><%= @order.created_at.strftime("%A, %d %b %Y %l:%M %p") %></td>
+      </tr>
+      <tr>
+        <td>Delivery cost</td>
+        <td><%= number_to_currency(20000.0, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+      </tr>
+      <tr>
+        <td>Total cost</td>
+        <td><%= number_to_currency( (@order.food_item.price * @order.quantity) + 20000, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
       </tr>
     </tbody>
   </table>
