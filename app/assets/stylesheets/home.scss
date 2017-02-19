@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#search {
-  margin-left: auto;
-}
-
 #filter {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -17,6 +13,14 @@
 
 #review {
   background-color: rgba(135, 76, 98, 0.8);
+}
+
+#c-card {
+  text-align: center;
+}
+
+.img {
+  bbackground-color: rgba(255, 255, 255, 0.8);
 }
 
 .jumbotron {

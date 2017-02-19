@@ -60,9 +60,10 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-- Add extra field to existing table: rails g migration add_xxx_to_yyy extra_field:datatype ; rails db:migrate
-- Difference between build and create method
-- Local asset has been deleted when upload to Heroku
+* Add extra field to existing table: rails g migration add_xxx_to_yyy extra_field:datatype ; rails db:migrate
+* Difference between build and create method
+* Local asset has been deleted when upload to Heroku
+* CSS customization
 
 ## License
 

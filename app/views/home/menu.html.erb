@@ -5,12 +5,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <form class="form-inline my-2 my-lg-0">
-    <%= form_tag menu_path, method: 'get' do %>
-    <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: 'Search' %>
-    <%= submit_tag 'Search', class: 'btn btn-warning my-2 my-sm-0'%>
-    <% end %>
-  </form>
 <div class="container" id="filter">
   <div class="row">
     <div class="btn-group">
@@ -36,7 +30,7 @@
     <% if @items %>
       <% @items.each do |item| %>
         <div class="col-sm-4">
-          <div class="card">
+          <div class="card" id="c-card">
             <div class="views text-white">
               <i class="fa fa-eye" style="display:inline-block;width: 30px;"></i><span style="display:inline-block;min-width: 30px;"><%= item.hit_count %></span>
               <i class="fa fa-comments" style="display:inline-block;width: 30px;"></i><span style="display:inline-block;min-width: 30px;"><%= item.reviews.count %></span>
