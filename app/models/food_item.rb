@@ -1,8 +1,8 @@
 class FoodItem < ApplicationRecord
   belongs_to :section
   validates :name, :price, presence: true
-  has_many :orders
-  has_many :reviews
+  has_many :orders, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   is_impressionable
 
   def self.search(search)
