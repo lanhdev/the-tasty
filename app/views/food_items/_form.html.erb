@@ -1,7 +1,14 @@
-<%= form_for(food_item) do |f| %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div style="color: #FFFFFF">
+  <%= form_for(food_item) do |f| %>
   <% if food_item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
+      <h2 class="alert alert-danger"><%= pluralize(food_item.errors.count, "error") %> prohibited this food_item from being saved:</h2>
 
       <ul>
       <% food_item.errors.full_messages.each do |message| %>
@@ -13,17 +20,17 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -33,10 +40,11 @@
 
   <div class="field">
     <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
+    <%= f.text_field :image_url, class: 'form-control' %>
+  </div><br>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit 'Update', class: 'btn btn-warning' %>
 <% end %>
+</div>
+</body>
+</html>

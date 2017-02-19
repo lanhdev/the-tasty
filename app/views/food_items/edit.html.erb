@@ -1,6 +1,14 @@
-<h1>Editing Food Item</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<h1><span style="color: #FFFFFF">Editing Food Item</span></h1>
 
 <%= render 'form', food_item: @food_item %>
+<%= link_to 'Show', @food_item, class: 'btn btn-info'%>
+<%= link_to 'Back', food_items_path, class: 'btn btn-secondary' %>
+</body>
+</html>
 
-<%= link_to 'Show', @food_item %> |
-<%= link_to 'Back', food_items_path %>

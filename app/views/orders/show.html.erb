@@ -5,46 +5,42 @@
 </head>
 <body>
 <p id="notice"><%= notice %></p>
-<h1>Thank you for your order</h1>
-<div class="row">
-  <table class="table table-striped">
-    <thead class="table-inverse">
-    </thead>
-    <tbody>
-      <tr>
-        <td>Customer</td>
-        <td><%= @order.name %></td>
-      </tr>
-      <tr>
-        <td>Item</td>
-        <td><%= @order.food_item.name %></td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td><%= @order.phone_number %></td>
-      </tr>
-      <tr>
-        <td>Phone</td>
-        <td><%= @order.address %></td>
-      </tr>
-      <tr>
-        <td>Quantity</td>
-        <td><%= @order.quantity %></td>
-      </tr>
-      <tr>
-        <td>Created at</td>
-        <td><%= @order.created_at.strftime("%A, %d %b %Y %l:%M %p") %></td>
-      </tr>
-      <tr>
-        <td>Delivery cost</td>
-        <td><%= number_to_currency(20000.0, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
-      </tr>
-      <tr>
-        <td>Total cost</td>
-        <td><%= number_to_currency(@order.total_price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
-      </tr>
-    </tbody>
-  </table>
+<h1><span style="color: #FFFFFF">Thank you for your order</span></h1>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-2">
+      <p>Customer</p>
+      <p>Address</p>
+      <p>Phone</p>
+      <p>Time order</p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Delivery cost</td>
+          </tr>
+          <tr>
+            <td>Total cost</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <p><%= @order.name %></p>
+      <p><%= @order.address %></p>
+      <p><%= @order.phone_number %></p>
+      <p><%= @order.created_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><%= number_to_currency(20000.0, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+          </tr>
+          <tr>
+            <td><%= number_to_currency(@order.total_price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 </body>

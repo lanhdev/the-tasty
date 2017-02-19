@@ -34,8 +34,9 @@ class FoodItemsController < ApplicationController
 
     respond_to do |format|
       if @food_item.save
-        format.html { redirect_to @food_item, notice: 'Food item was successfully created.' }
+        format.html { redirect_to food_items_url }
         format.json { render :show, status: :created, location: @food_item }
+        flash[:success] = 'Food item was successfully created.'
       else
         format.html { render :new }
         format.json { render json: @food_item.errors, status: :unprocessable_entity }
@@ -48,8 +49,9 @@ class FoodItemsController < ApplicationController
   def update
     respond_to do |format|
       if @food_item.update(food_item_params)
-        format.html { redirect_to @food_item, notice: 'Food item was successfully updated.' }
+        format.html { redirect_to food_items_url }
         format.json { render :show, status: :ok, location: @food_item }
+        flash[:success] = 'Food item was successfully updated.'
       else
         format.html { render :edit }
         format.json { render json: @food_item.errors, status: :unprocessable_entity }
@@ -62,8 +64,9 @@ class FoodItemsController < ApplicationController
   def destroy
     @food_item.destroy
     respond_to do |format|
-      format.html { redirect_to food_items_url, notice: 'Food item was successfully destroyed.' }
+      format.html { redirect_to food_items_url }
       format.json { head :no_content }
+      flash[:success] = 'Food item was successfully destroyed.'
     end
   end
 

@@ -11,28 +11,26 @@
   padding-bottom: 25px;
 }
 
+#n-review {
+  background-color: rgba(201, 132, 116, 0.8);
+}
+
+#review {
+  background-color: rgba(135, 76, 98, 0.8);
+}
+
 .jumbotron {
-  background-color: rgba(200, 200, 200, 0.9);
+  background-color: rgba(200, 200, 200, 0);
   color: rgba(255, 255, 255, 1);
-  text-align: center;
+  text-align: justify;
 }
 
 .card {
-  background-color: rgba(200, 200, 200, 0.8);
+  background-color: rgba(50, 50, 50, 0.8);
   color: rgba(255, 255, 255, 1);
 
   .views {
     position: absolute; top: 0; right: 0; z-index: 2; padding: 10px;
     font-size: 20px;
   }
-
-  .detail {
-    left: 100%;
-  }
-
-  .order {
-    right: 100%;
-  }
-
-
 }

@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div style="color: #FFFFFF">
 <%= form_for [item, order] do |f| %>
   <% if order.errors.present? %>
     <div class="alert alert-danger"><%= order.errors.full_messages.to_sentence %></div>
@@ -29,4 +36,7 @@
     </div>
   </div>
   <%= f.submit 'Checkout', class: 'btn btn-success' %>
-<% end %>
+<% end %>  
+</div>
+</body>
+</html>

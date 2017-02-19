@@ -20,7 +20,8 @@ class OrdersController < ApplicationController
     @order.total_price_calc
 
     if @order.save
-      redirect_to food_item_order_path(id: @order.id), flash: {success: "Thank you for your order. "}
+      redirect_to food_item_order_path(id: @order.id)
+      flash[:success] = "Thank you for your order."
     else
       render 'new'
     end
@@ -28,6 +29,10 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
+    respond_to do |format|
+      format.html { redirect_to food_item_orders_path }
+      flash[:success] = "Order was successfully destroyed."
+    end
   end
 
   def set_order

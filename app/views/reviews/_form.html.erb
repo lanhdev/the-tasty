@@ -1,4 +1,4 @@
-<h3 class="card-header card-danger">New review</h3>
+<h3 class="card-header" id="n-review">New review</h3>
 <div class="card-block">
   <%= form_for([@food_item, @food_item.reviews.build]) do |f| %>
     <div id='star-rating'></div>
@@ -9,7 +9,7 @@
       <%= f.text_field :comment, class: 'form-control', placeholder: 'Comment' %> 
     </div><br>
     <div class="float-xl-right">
-      <%= f.submit 'Submit', class: 'btn btn-success' %>
+      <%= f.submit 'Submit', class: 'btn btn-warning' %>
     </div>
   <% end %>
 </div>

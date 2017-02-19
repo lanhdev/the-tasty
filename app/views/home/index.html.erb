@@ -4,17 +4,18 @@
   <title></title>
 </head>
 <body>
-<div class="container">
-  <div class="col-sm-6">
-  <div class="jumbotron">
-      <h1>Welcome to Il Gustoso</h1>
-      <%= link_to "Discover", menu_path, class: 'btn btn-outline-primary' %>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-6">
+        <h1>Welcome to</h1>
+        <p style="font-size: 96px">Il Gustoso</p>
+        <span style="padding-top: 20px;"><%= link_to "Discover", menu_path, class: 'btn btn-lg btn-outline-secondary' %></span>
+    </div>
+    <div class="col-sm-6">
+      <img src="http://loremflickr.com/480/480/restaurant">
+    </div>
   </div>
 </div>
-    <div class="col-sm-6 float-right">
-      <img src="http://loremflickr.com/480/480/restaurant", height="320", width="320">
-    </div>
-
 </body>
 </html>
 
