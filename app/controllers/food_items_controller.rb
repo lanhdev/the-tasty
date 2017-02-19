@@ -64,7 +64,7 @@ class FoodItemsController < ApplicationController
   def destroy
     @food_item.destroy
     respond_to do |format|
-      format.html { redirect_to food_items_url }
+      format.html { redirect_to food_items_path }
       format.json { head :no_content }
       flash[:success] = 'Food item was successfully destroyed.'
     end
