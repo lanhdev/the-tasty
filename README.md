@@ -4,7 +4,7 @@
 
 Submitted by: **Lanh Hoang**
 
-Time spent: **40** hours spent in total
+Time spent: **50** hours spent in total
 
 URL: **https://ilgustoso.herokuapp.com**
 
@@ -45,10 +45,6 @@ URL: **https://ilgustoso.herokuapp.com**
 * [ ] User can order more than one dish at a time.
 * [ ] User receives an email upon placing an order.
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
-
-The following **additional** features are implemented:
-
-* [ ] Something nice you added.
 
 The following **known issues**:
 
