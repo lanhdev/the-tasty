@@ -43,6 +43,14 @@
           <td></td>
           <td><%= number_to_currency(20000.0, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
         </tr>
+        <% if @order.coupon_code.presence %>
+          <tr>
+            <td>Discount</td>
+            <td></td>
+            <td></td>
+            <td><%= number_to_currency((@order.food_item.price * @order.quantity) / 2, precision: 0, unit: "VND", delimiter: ",", format: "%n %u")%></td>
+          </tr>
+        <% end %>
         <tr>
           <td>Total cost</td>
           <td></td>
