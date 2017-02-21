@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  add_flash_types :success, :warning, :danger, :info
 
   def index
     @item = FoodItem.find(params[:food_item_id])

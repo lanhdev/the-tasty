@@ -1,6 +1,7 @@
 class FoodItemsController < ApplicationController
   before_action :set_food_item, only: [:show, :edit, :update, :destroy]
   impressionist :actions=>[:show]
+  add_flash_types :success, :warning, :danger, :info
 
   # GET /food_items
   # GET /food_items.json
@@ -34,9 +35,8 @@ class FoodItemsController < ApplicationController
 
     respond_to do |format|
       if @food_item.save
-        format.html { redirect_to food_items_url }
+        format.html { redirect_to food_items_url, success: 'Food item was successfully created.' }
         format.json { render :show, status: :created, location: @food_item }
-        flash[:success] = 'Food item was successfully created.'
       else
         format.html { render :new }
         format.json { render json: @food_item.errors, status: :unprocessable_entity }
@@ -49,9 +49,8 @@ class FoodItemsController < ApplicationController
   def update
     respond_to do |format|
       if @food_item.update(food_item_params)
-        format.html { redirect_to food_items_url }
+        format.html { redirect_to food_items_url, success: 'Food item was successfully updated.' }
         format.json { render :show, status: :ok, location: @food_item }
-        flash[:success] = 'Food item was successfully updated.'
       else
         format.html { render :edit }
         format.json { render json: @food_item.errors, status: :unprocessable_entity }
@@ -64,9 +63,8 @@ class FoodItemsController < ApplicationController
   def destroy
     @food_item.destroy
     respond_to do |format|
-      format.html { redirect_to food_items_path }
+      format.html { redirect_to food_items_path, danger: 'Food item was successfully destroyed.' }
       format.json { head :no_content }
-      flash[:success] = 'Food item was successfully destroyed.'
     end
   end
 
