@@ -1,7 +1,7 @@
 class FoodItemsController < ApplicationController
   before_action :set_food_item, only: [:show, :edit, :update, :destroy]
   impressionist :actions=>[:show]
-  add_flash_types :success, :warning, :danger, :info
+  add_flash_types :success, :warning, :error, :info
 
   # GET /food_items
   # GET /food_items.json
@@ -49,7 +49,7 @@ class FoodItemsController < ApplicationController
   def update
     respond_to do |format|
       if @food_item.update(food_item_params)
-        format.html { redirect_to food_items_url, success: 'Food item was successfully updated.' }
+        format.html { redirect_to food_items_url, info: 'Food item was successfully updated.' }
         format.json { render :show, status: :ok, location: @food_item }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class FoodItemsController < ApplicationController
   def destroy
     @food_item.destroy
     respond_to do |format|
-      format.html { redirect_to food_items_path, danger: 'Food item was successfully destroyed.' }
+      format.html { redirect_to food_items_path, error: 'Food item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

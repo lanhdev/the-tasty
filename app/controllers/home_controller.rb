@@ -7,6 +7,8 @@ class HomeController < ApplicationController
     if params[:section_id].present?
       @current_section = Section.find(params[:section_id])
       @items = @current_section.food_items
+    else
+      @items = FoodItem.all
     end
 
     if params[:search]

@@ -31,8 +31,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to food_item_orders_path }
-      flash[:success] = "Order was successfully destroyed."
+      format.html { redirect_to food_item_orders_path, info: "Order was successfully destroyed." }
     end
   end
 

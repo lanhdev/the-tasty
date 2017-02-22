@@ -12,11 +12,7 @@
   <body>
     <%= render 'layouts/navbar' %>
     <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %> alert-dismissable fade show"><span><%= value %>
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        </div>
-      <% end %>
+      <%= flash_messages %>
       <%= yield %>
     </div>
   </body>
